@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/instructions.css') }}">
+    <title>Instructions</title>
+</head>
+
+<body>
+    <div class="Instructions-contianer" id="instructions">
+        <h2>Please read the following instructions carefully! </h2>
+        <strong> We are building a smart robot that can understand videos similarly to humans. Ideally, the robot should be able to
+                 identify objects, their properties, and positions. It should also understand logical reasons like why something happens in the videos.
+				 It should be able to connect different actions that happens at different instances in the video.
+				 Your task is to teach this smart robot by asking different questions about a video and providing answers to them.
+        </strong>
+
+        <strong>General guidelines:
+                <ol>
+                    <li> DO NOT include time information in the question or answer. For example, 'What happens between 10th and 15th second in the video?' is an INVALID question.
+                    <li> The question should be about the video. That is, a human should not be able to answer the question correctly without seeing the video. For exmaple, DO NOT ask questions like 'which animal in barking?'. This can be answered as 'dog' without seeing the video.</li>
+
+                </ol>
+        </strong>
+         <form id = "instructions-form" method="POST" action="/instructions-next-button">
+            <input type="submit" name="next" value="Next">
+         </form>
+    </div>
+</body>
+</html>

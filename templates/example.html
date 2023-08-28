@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/example.css') }}">
+    <title>Examples</title>
+</head>
+
+<body>
+    <div id="video_div">
+        <p>Please see to the following video and complete the tasks below. (You can view it multiple times):</p>
+        <video width="640" height="480" controls>
+            <source id="VideoSource" src="{{url_for('static', filename='example_video/10011660054.mp4') }}" type=video/mp4>
+            Your browser does not support the <code>video</code> element.
+        </video>
+    </div>
+
+    <div id="yes_or_no">
+        <br> <br>
+        <strong>Based on the video, please write two 'yes' or 'no' questions and answers.</strong>
+        <br> <br>
+        <strong> <u> Question 1: </u></strong>
+        <br> <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="Is the laptop on?" disabled></textarea>
+        <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="Yes" disabled></textarea>
+
+        <br> <br>
+        <strong> <u> Question 2: </u></strong>
+        <br><br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="Does the teacher drink water in the video?" disabled></textarea>
+        <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="No" disabled></textarea>
+    </div>
+    <br> <br>
+    <div id="descriptive_questions">
+        <strong>Based on the video, please write two descriptive questions and answers.</strong>
+        <br> <br>
+        <strong> <u> Question 1: </u></strong>
+        <br> <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="What is next to the laptop?" disabled></textarea>
+        <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="A water bottle is next to the laptop." disabled></textarea>
+
+        <br> <br>
+        <strong> <u> Question 2: </u></strong>
+        <br><br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="What is being taught?" disabled></textarea>
+        <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="The code to create a game is being taught." disabled></textarea>
+    </div>
+    <br> <br>
+    <div id="logical_reasoning">
+        <strong>Based on the video, please write two logical questions and answers.</strong>
+        <br> <br>
+        <strong> <u> Question 1: </u></strong>
+        <br> <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="Why is the teacher asking questions to the students?" disabled></textarea>
+        <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="The teacher is asking questions to the students to catch their attention and to make them think about the problem." disabled></textarea>
+
+        <br> <br>
+        <strong> <u> Question 2: </u></strong>
+        <br><br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="Why is there a water bottle on the table?" disabled></textarea>
+        <br>
+        <textarea cols="100" rows="2" spellcheck="true" placeholder="Since the teacher talks a lot while teaching, she may become thirsty and hence she has a water bottle to drink some water." disabled></textarea>
+    </div>
+    <br> <br>
+    <form id = "example-form" method="POST" action="/example-proceed-to-task-button">
+            <input type="submit" name="proceed_to_task" value="Proceed to task">
+    </form>
+
+</body>
+</html>
