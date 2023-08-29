@@ -165,7 +165,7 @@ def handle_disconnect():
     print(currently_assigned_list)
 
 
-@app.route('data/videos/batch{}/<filename>'.format(batch_num))
+@app.route('/data/videos/batch{}/<filename>'.format(batch_num))
 def serve_video(filename):
     return send_from_directory('data/videos/batch{}'.format(batch_num), filename)
 
