@@ -64,19 +64,16 @@ def example_proceed_to_task_button():
 # # # # # # End of example page # # # # # # # # # # # # #
 
 # # # # # # Task page # # # # # # # # # # # # #
-'''
+
 batch_num = 1
 
-#videos_folder = os.path.join(app.static_folder, 'videos/batch{}/'.format(batch_num))
-videos_folder = 'videos/batch{}/'.format(batch_num)
-#app.config['videos_folder'] = videos_folder
-
+videos_folder = 'data/videos/batch{}/'.format(batch_num)
 video_files = [filename for filename in os.listdir(videos_folder)]
 print(video_files)
 
-output_folder = 'outputs/batch{}/'.format(batch_num)
+output_folder = 'data/outputs/batch{}/'.format(batch_num)
 app.config['output_folder'] = output_folder
-os.makedirs('outputs/batch{}/'.format(batch_num), exist_ok=True)
+os.makedirs('data/outputs/batch{}/'.format(batch_num), exist_ok=True)
 
 
 available_video_files = video_files
@@ -168,10 +165,10 @@ def handle_disconnect():
     print(currently_assigned_list)
 
 
-@app.route('/videos/batch{}/<filename>'.format(batch_num))
+@app.route('data/videos/batch{}/<filename>'.format(batch_num))
 def serve_video(filename):
-    return send_from_directory('videos/batch{}'.format(batch_num), filename)
+    return send_from_directory('data/videos/batch{}'.format(batch_num), filename)
 
-'''
+
 if __name__ == '__main__':
     app.run(debug=True)
