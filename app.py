@@ -64,7 +64,7 @@ def example_proceed_to_task_button():
 # # # # # # End of example page # # # # # # # # # # # # #
 
 # # # # # # Task page # # # # # # # # # # # # #
-'''
+
 batch_num = 1
 
 videos_folder = 'data/videos/batch{}/'.format(batch_num)
@@ -168,7 +168,7 @@ def handle_disconnect():
 @app.route('/data/videos/batch{}/<filename>'.format(batch_num))
 def serve_video(filename):
     return send_from_directory('data/videos/batch{}'.format(batch_num), filename)
-'''
+
 
 if __name__ == '__main__':
     app.run(debug=True)
