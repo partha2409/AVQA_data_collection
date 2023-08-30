@@ -10,8 +10,12 @@ app.secret_key = 'avqa-data-collection'
 socketio = SocketIO(app)
 
 # # # # # # login page # # # # # # # # # # # # #
-with open('registered_emails.pkl', "rb") as f:
+
+def get_registered_email_ids():
+    f = open('data/registered_emails.pkl', "rb")
     registered_email_ids = pickle.load(f)
+    f.close()
+    return registered_email_ids
 
 
 @app.route("/")
@@ -22,7 +26,7 @@ def home():
 @app.route('/check-credentials', methods=['POST'])
 def login():
     email_id = request.form.get('email_id')
-
+    registered_email_ids = get_registered_email_ids()
     if email_id in registered_email_ids:
         session['worker_id'] = registered_email_ids[email_id]
         return redirect(url_for('instructions'))
